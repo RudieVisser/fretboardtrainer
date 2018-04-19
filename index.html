@@ -75,7 +75,7 @@
             <div class="end-game">You finished with score: <span id="finalscore">0</span></div>
             <div class="scoreboard">
                 <div class="answer"></div>
-                <div class="time-remaining">30</div>
+                <div class="time-remaining">100</div>
                 <div class="score">Score: <span id="score">0</span></div>
             </div>
             <div class="fretboard-grid">
@@ -102,7 +102,6 @@
             $(stringImg).mousedown(checkAnswer);
 
             var score = 0;
-            var delayrec = {};
 
             function random(min, max) {
                 return Math.floor(Math.random() * (max - min) ) + min;
@@ -120,11 +119,6 @@
                             return prop;
                     }
                 }
-            }
-
-            function delay(callback, id, calldelay) {
-                clearTimeout(delayrec[id]);
-                delayrec[id] = setTimeout(callback, calldelay);
             }
 
             function randomNote(oldVal) {
@@ -255,7 +249,7 @@
                 $(".end-game").hide();
 
                 $(".note").text("Prepare!");
-                $(".time-remaining").html("30");
+                $(".time-remaining").html("100");
                 setTimeout(function() {
                     startGameTimer();
                     updateNote();
@@ -267,7 +261,7 @@
             }
 
             function startGameTimer() {
-                countDown(29, function(){
+                countDown(99, function(){
                     endGame();
                 });
             }
