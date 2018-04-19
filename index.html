@@ -242,6 +242,7 @@
             function startGame() {
                 score = 0;
                 clearInterval(timer);
+                $("#score").text(score);
                 $(".scoreboard").show();
                 $(".fretboard-grid").show();
                 $(".note").show();
